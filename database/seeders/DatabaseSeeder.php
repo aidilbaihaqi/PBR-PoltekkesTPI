@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Barang;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -15,9 +16,12 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        // Data Barang
+        Barang::create([
+            'nama_barang' => 'Macbook',
+            'deskripsi_barang' => 'Laptop bertipe os apple yang digunakan untuk bagian programming dan desain, tidak bisa dibuat ngegame',
+            'status_barang' => 1,
+            'stok' => 76
         ]);
     }
 }

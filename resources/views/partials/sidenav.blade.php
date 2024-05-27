@@ -15,7 +15,7 @@
               </a>
               <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                   <nav class="sb-sidenav-menu-nested nav">
-                      <a class="nav-link" href="">Data Barang</a>
+                      <a class="nav-link" href="{{ route('barang.index') }}">Data Barang</a>
                       <a class="nav-link" href="">Peminjaman Barang</a>
                   </nav>
               </div>
