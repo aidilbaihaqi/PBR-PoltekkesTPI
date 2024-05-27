@@ -19,7 +19,7 @@
                     {{ $title }}
                 </div>
                 <div>
-                    <a href="" class="btn btn-sm btn-primary">Tambah data</a>
+                    <a href="{{ route('barang.create') }}" class="btn btn-sm btn-primary">Tambah data</a>
                 </div>
             </div>
             <div class="card-body">
@@ -49,8 +49,8 @@
                             </td>
                             <td>{!! $d->deskripsi_barang !!}</td>
                             <td>
-                                <a href="" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
-                                <a href="" class="btn btn-sm btn-primary"><i class="fas fa-pencil"></i></a>
+                                <a href="{{ route('barang.destroy', $d->id) }}" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
+                                <a href="{{ route('barang.edit', $d->id) }}" class="btn btn-sm btn-primary"><i class="fas fa-pencil"></i></a>
                             </td>
                         </tr>  
                         @endforeach
