@@ -1,11 +1,9 @@
 <footer class="py-4 bg-light mt-auto">
   <div class="container-fluid px-4">
       <div class="d-flex align-items-center justify-content-between small">
-          <div class="text-muted">Copyright &copy; Your Website 2023</div>
+          <div class="text-muted">Copyright &copy; PBR Poltekkes Kemenkes Tanjungpinang</div>
           <div>
-              <a href="#">Privacy Policy</a>
-              &middot;
-              <a href="#">Terms &amp; Conditions</a>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted by <span class="text-primary">...</span> & made with <i class="fas fa-heart"></i></span>
           </div>
       </div>
   </div>
