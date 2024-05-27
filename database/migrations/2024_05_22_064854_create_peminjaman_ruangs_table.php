@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('peminjaman_ruangs', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_ruang')->unique();
+            $table->string('nama_peminjam');
             $table->date('tgl_peminjaman');
             $table->date('tgl_pengembalian');
             $table->boolean('status_peminjaman')->default(0);
