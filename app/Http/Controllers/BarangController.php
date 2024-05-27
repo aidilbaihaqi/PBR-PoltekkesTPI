@@ -35,15 +35,15 @@ class BarangController extends Controller
                         ->with('success', 'Barang berhasil ditambahkan!');
     }
 
-    public function edit(Barang $id) {
-        $data = Barang::findOrFail($id)->get();
+    public function edit($id) {
+        $data = Barang::findOrFail($id)->first();
         return view('barang.edit', [
             'title' => 'Edit Data Barang',
             'data' => $data
         ]);
     }
 
-    public function update(Request $request, Barang $id) {
+    public function update(Request $request, $id) {
         $request->validate([
             'nama_barang' => 'required|max:100',
             'deskripsi_barang',
@@ -51,7 +51,7 @@ class BarangController extends Controller
             'stok' => 'required'
         ]);
 
-        $data = Barang::findOrFail($id);
+        $data = Barang::find($id);
         $data->update($request->all());
 
         return redirect()->route('barang.index')

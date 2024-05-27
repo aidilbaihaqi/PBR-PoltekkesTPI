@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
+// Data Barang
 Route::controller(BarangController::class)->group(function() {
   Route::get('/barang', 'index')->name('barang.index');
   Route::get('/barang/tambah' , 'create')->name('barang.create');
