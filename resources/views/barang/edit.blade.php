@@ -31,7 +31,7 @@
                     </div>
                     <div class="form-group mb-2">
                       <label for="deskripsi_barang">Deskripsi Barang (<small id="emailHelp" class="form-text text-muted">Optional</small>)</label>
-                      <textarea class="form-control" id="deskripsi_barang" rows="3">{!! $data->deskripsi_barang !!}</textarea>
+                      <textarea class="form-control" name="deskripsi_barang" id="deskripsi_barang" rows="3">{!! $data->deskripsi_barang !!}</textarea>
                     </div>
                     <div class="form-group mb-2">
                       <label for="nama_barang">Status Barang</label>

@@ -31,8 +31,7 @@ class BarangController extends Controller
 
         Barang::create($request->all());
 
-        return redirect()->route('barang.index')
-                        ->with('success', 'Barang berhasil ditambahkan!');
+        return redirect()->route('barang.index')->with('success', 'Barang berhasil ditambahkan!');
     }
 
     public function edit($id) {
