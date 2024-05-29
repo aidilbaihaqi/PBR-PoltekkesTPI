@@ -30,18 +30,18 @@
                     </div>
                     <div class="form-group mb-2">
                       <label for="deskripsi_barang">Deskripsi Barang (<small id="emailHelp" class="form-text text-muted">Optional</small>)</label>
-                      <textarea class="form-control" id="deskripsi_barang" rows="3"></textarea>
+                      <textarea class="form-control" name="deskripsi_barang" id="deskripsi_barang" rows="3"></textarea>
                     </div>
                     <div class="form-group mb-2">
                       <label for="nama_barang">Status Barang</label>
                       <div class="form-check">
-                        <input class="form-check-input" type="radio" name="status_barang" id="tersedia" value="{{ 0 }}" checked>
+                        <input class="form-check-input" type="radio" name="status_barang" id="tersedia" value="{{ 1 }}" checked>
                         <label class="form-check-label" for="tersedia">
                           Tersedia
                         </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" type="radio" name="status_barang" id="tidak_tersedia" value="{{ 1 }}">
+                        <input class="form-check-input" type="radio" name="status_barang" id="tidak_tersedia" value="{{ 0 }}">
                         <label class="form-check-label" for="tidak_tersedia">
                           Tidak Tersedia
                         </label>
