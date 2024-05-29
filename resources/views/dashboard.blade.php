@@ -23,7 +23,7 @@
                             Barang yang belum dikembalikan
                         </div>
                         <div>
-                            <a href="" class="btn btn-sm btn-primary">Akses</a>
+                            <a href="{{ route('barang.index') }}" class="btn btn-sm btn-primary">Akses</a>
                         </div>
                     </div>
                     <div class="card-body">
@@ -56,7 +56,7 @@
                             Ruang yang belum dikembalikan
                         </div>
                         <div>
-                            <a href="" class="btn btn-sm btn-primary">Akses</a>
+                            <a href="{{ route('ruang.index') }}" class="btn btn-sm btn-primary">Akses</a>
                         </div>
                     </div>
                     <div class="card-body">
