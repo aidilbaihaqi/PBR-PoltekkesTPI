@@ -35,15 +35,15 @@ class RuangController extends Controller
                         ->with('success', 'Ruang berhasil ditambahkan!');
     }
 
-    public function edit(Ruang $id) {
-        $data = Ruang::findOrFail($id)->get();
+    public function edit($id) {
+        $data = Ruang::findOrFail($id)->first();
         return view('ruang.edit', [
             'title' => 'Edit Data Ruang',
             'data' => $data
         ]);
     }
 
-    public function update(Request $request, Ruang $id) {
+    public function update(Request $request,$id) {
         $request->validate([
             'nama_ruang' => 'required|min:5|max:100',
             'lokasi_ruang' => 'required|min:5|max:100',
@@ -51,7 +51,7 @@ class RuangController extends Controller
             'status_ruang' => 'required'
         ]);
 
-        $data = Ruang::findOrFail($id);
+        $data = Ruang::find($id);
         $data->update($request->all());
 
         return redirect()->route('ruang.index')

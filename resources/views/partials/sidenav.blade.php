@@ -26,7 +26,7 @@
               </a>
               <div class="collapse" id="collapseLayouts2" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                   <nav class="sb-sidenav-menu-nested nav">
-                      <a class="nav-link" href="">Data Ruang</a>
+                      <a class="nav-link" href="{{ route('ruang.index') }}">Data Ruang</a>
                       <a class="nav-link" href="">Peminjaman Ruang</a>
                   </nav>
               </div>
