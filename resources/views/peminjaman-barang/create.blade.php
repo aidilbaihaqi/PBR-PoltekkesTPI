@@ -47,7 +47,7 @@
                         </script>
                       </div>
                     </div>
-                    <div>
+                    <div class="form-group mb-2">
                       <label class="col-form-label col-md-3 col-sm-3 label-align">Tanggal Pengembalian
                       </label>
                       <div class="col-md-6 col-sm-6 ">
@@ -61,6 +61,7 @@
                         </script>
                       </div>
                     </div>
+                    <input type="hidden" name="status_peminjaman" value="{{ 0 }}">
                     <button type="submit" class="btn btn-primary">Tambah</button>
                   </form>
             </div>
