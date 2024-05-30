@@ -9,7 +9,8 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 class PeminjamanBarang extends Model
 {
     protected $fillable = [
-        'id_ruang',
+        'kode_barang',
+        'nama_peminjam',
         'tgl_peminjaman',
         'tgl_pengembalian',
         'status_peminjaman'

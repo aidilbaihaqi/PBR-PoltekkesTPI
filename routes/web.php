@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PeminjamanBarangController;
+use App\Http\Controllers\RuangController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
@@ -14,4 +16,24 @@ Route::controller(BarangController::class)->group(function() {
   Route::get('/barang/edit/{id}', 'edit')->name('barang.edit');
   Route::post('/barang/edit/{id}', 'update')->name('barang.update');
   Route::get('/barang/hapus/{id}', 'destroy')->name('barang.destroy');
+});
+
+// Data Ruang
+Route::controller(RuangController::class)->group(function() {
+  Route::get('/ruang', 'index')->name('ruang.index');
+  Route::get('/ruang/tambah' , 'create')->name('ruang.create');
+  Route::post('/ruang/tambah', 'store')->name('ruang.store');
+  Route::get('/ruang/edit/{id}', 'edit')->name('ruang.edit');
+  Route::post('/ruang/edit/{id}', 'update')->name('ruang.update');
+  Route::get('/ruang/hapus/{id}', 'destroy')->name('ruang.destroy');
+});
+
+// Data Peminjaman Barang
+Route::controller(PeminjamanBarangController::class)->group(function() {
+  Route::get('/peminjaman-barang', 'index')->name('peminjaman-barang.index');
+  Route::get('/peminjaman-barang/tambah' , 'create')->name('peminjaman-barang.create');
+  Route::post('/peminjaman-barang/tambah', 'store')->name('peminjaman-barang.store');
+  Route::get('/peminjaman-barang/edit/{id}', 'edit')->name('peminjaman-barang.edit');
+  Route::post('/peminjaman-barang/edit/{id}', 'update')->name('peminjaman-barang.update');
+  Route::get('/peminjaman-barang/hapus/{id}', 'destroy')->name('peminjaman-barang.destroy');
 });

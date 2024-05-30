@@ -16,7 +16,7 @@
               <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                   <nav class="sb-sidenav-menu-nested nav">
                       <a class="nav-link" href="{{ route('barang.index') }}">Data Barang</a>
-                      <a class="nav-link" href="">Peminjaman Barang</a>
+                      <a class="nav-link" href="{{ route('peminjaman-barang.index') }}">Peminjaman Barang</a>
                   </nav>
               </div>
               <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts2" aria-expanded="false" aria-controls="collapseLayouts">
@@ -26,7 +26,7 @@
               </a>
               <div class="collapse" id="collapseLayouts2" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                   <nav class="sb-sidenav-menu-nested nav">
-                      <a class="nav-link" href="">Data Ruang</a>
+                      <a class="nav-link" href="{{ route('ruang.index') }}">Data Ruang</a>
                       <a class="nav-link" href="">Peminjaman Ruang</a>
                   </nav>
               </div>
