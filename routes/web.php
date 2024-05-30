@@ -3,6 +3,7 @@
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PeminjamanBarangController;
+use App\Http\Controllers\PeminjamanRuangController;
 use App\Http\Controllers\RuangController;
 use Illuminate\Support\Facades\Route;
 
@@ -36,4 +37,13 @@ Route::controller(PeminjamanBarangController::class)->group(function() {
   Route::get('/peminjaman-barang/edit/{id}', 'edit')->name('peminjaman-barang.edit');
   Route::post('/peminjaman-barang/edit/{id}', 'update')->name('peminjaman-barang.update');
   Route::get('/peminjaman-barang/hapus/{id}', 'destroy')->name('peminjaman-barang.destroy');
+});
+
+Route::controller(PeminjamanRuangController::class)->group(function() {
+  Route::get('/peminjaman-ruang', 'index')->name('peminjaman-ruang.index');
+  Route::get('/peminjaman-ruang/tambah' , 'create')->name('peminjaman-ruang.create');
+  Route::post('/peminjaman-ruang/tambah', 'store')->name('peminjaman-ruang.store');
+  Route::get('/peminjaman-ruang/edit/{id}', 'edit')->name('peminjaman-ruang.edit');
+  Route::post('/peminjaman-ruang/edit/{id}', 'update')->name('peminjaman-ruang.update');
+  Route::get('/peminjaman-ruang/hapus/{id}', 'destroy')->name('peminjaman-ruang.destroy');
 });
