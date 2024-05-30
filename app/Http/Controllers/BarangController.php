@@ -23,6 +23,7 @@ class BarangController extends Controller
 
     public function store(Request $request) {
         $request->validate([
+            'kode_barang' => 'required|unique:barangs',
             'nama_barang' => 'required|max:100',
             'deskripsi_barang',
             'status_barang',
@@ -34,23 +35,24 @@ class BarangController extends Controller
         return redirect()->route('barang.index')->with('success', 'Barang berhasil ditambahkan!');
     }
 
-    public function edit($id) {
-        $data = Barang::findOrFail($id)->first();
+    public function edit($kode_barang) {
+        $data = Barang::where('kode_barang',  $kode_barang)->first();
         return view('barang.edit', [
             'title' => 'Edit Data Barang',
             'data' => $data
         ]);
     }
 
-    public function update(Request $request, $id) {
+    public function update(Request $request, $kode_barang) {
         $request->validate([
+            'kode_barang' => 'required',
             'nama_barang' => 'required|max:100',
             'deskripsi_barang',
             'status_barang' => 'required',
             'stok' => 'required'
         ]);
 
-        $data = Barang::find($id);
+        $data = Barang::find($kode_barang);
         $data->update($request->all());
 
         return redirect()->route('barang.index')
@@ -58,7 +60,7 @@ class BarangController extends Controller
     }
 
     public function destroy($id) {
-        $data = Barang::findOrFail($id);
+        $data = Barang::find($id);
         $data->delete();
 
         return redirect()->route('barang.index')

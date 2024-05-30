@@ -18,9 +18,12 @@
                 {{ $title }}
             </div>
             <div class="card-body">
-                <form action="{{ route('barang.update', $data->id) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('barang.update', $data->kode_barang) }}" method="POST" enctype="multipart/form-data">
                   @csrf
-                  <input type="hidden" name="id" value="{{ $data->id }}">
+                    <div class="form-group mb-2">
+                      <label for="kode_barang">Kode Barang</label>
+                      <input type="text" class="form-control" name="kode_barang" id="kode_barang" value="{{ $data->kode_barang }}" required>
+                    </div>
                     <div class="form-group mb-2">
                       <label for="nama_barang">Nama Barang</label>
                       <input type="text" class="form-control" name="nama_barang" value="{{ $data->nama_barang }}" id="nama_barang" required>

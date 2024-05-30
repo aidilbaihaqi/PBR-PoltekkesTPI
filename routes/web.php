@@ -13,9 +13,9 @@ Route::controller(BarangController::class)->group(function() {
   Route::get('/barang', 'index')->name('barang.index');
   Route::get('/barang/tambah' , 'create')->name('barang.create');
   Route::post('/barang/tambah', 'store')->name('barang.store');
-  Route::get('/barang/edit/{id}', 'edit')->name('barang.edit');
-  Route::post('/barang/edit/{id}', 'update')->name('barang.update');
-  Route::get('/barang/hapus/{id}', 'destroy')->name('barang.destroy');
+  Route::get('/barang/edit/{kode_barang}', 'edit')->name('barang.edit');
+  Route::post('/barang/edit/{kode_barang}', 'update')->name('barang.update');
+  Route::get('/barang/hapus/{kode_barang}', 'destroy')->name('barang.destroy');
 });
 
 // Data Ruang
