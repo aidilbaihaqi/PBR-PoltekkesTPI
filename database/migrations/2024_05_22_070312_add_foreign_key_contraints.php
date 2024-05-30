@@ -17,8 +17,8 @@ return new class extends Migration
             ->on('barangs');
         });
         Schema::table('peminjaman_ruangs', function(Blueprint $table) {
-            $table->foreign('id_ruang')
-            ->references('id')
+            $table->foreign('kode_ruang')
+            ->references('kode_ruang')
             ->on('ruangs');
         });
     }

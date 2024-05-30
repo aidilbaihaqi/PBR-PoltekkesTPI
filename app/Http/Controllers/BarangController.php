@@ -36,7 +36,7 @@ class BarangController extends Controller
     }
 
     public function edit($kode_barang) {
-        $data = Barang::where('kode_barang',  $kode_barang)->first();
+        $data = Barang::where('kode_barang',$kode_barang)->first();
         return view('barang.edit', [
             'title' => 'Edit Data Barang',
             'data' => $data

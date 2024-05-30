@@ -23,6 +23,7 @@ class RuangController extends Controller
 
     public function store(Request $request) {
         $request->validate([
+            'kode_ruang' => 'required|unique:ruangs',
             'nama_ruang' => 'required|min:5|max:100',
             'lokasi_ruang' => 'required|min:5|max:100',
             'kapasitas' => 'required',
@@ -35,31 +36,31 @@ class RuangController extends Controller
                         ->with('success', 'Ruang berhasil ditambahkan!');
     }
 
-    public function edit($id) {
-        $data = Ruang::findOrFail($id)->first();
+    public function edit($kode_ruang) {
+        $data = Ruang::where('kode_ruang', $kode_ruang)->first();
         return view('ruang.edit', [
             'title' => 'Edit Data Ruang',
             'data' => $data
         ]);
     }
 
-    public function update(Request $request,$id) {
+    public function update(Request $request, $kode_ruang) {
         $request->validate([
             'nama_ruang' => 'required|min:5|max:100',
             'lokasi_ruang' => 'required|min:5|max:100',
             'kapasitas' => 'required',
             'status_ruang' => 'required'
         ]);
-
-        $data = Ruang::find($id);
+        
+        $data = Ruang::find($kode_ruang);
         $data->update($request->all());
 
         return redirect()->route('ruang.index')
                         ->with('success', 'Ruang berhasil diubah!');
     }
 
-    public function destroy($id) {
-        $data = Ruang::findOrFail($id);
+    public function destroy($kode_ruang) {
+        $data = Ruang::find($kode_ruang);
         $data->delete();
 
         return redirect()->route('ruang.index')

@@ -16,8 +16,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
         // Data Barang
         Barang::create([
             'kode_barang' => 'ITM-01',
@@ -29,6 +27,7 @@ class DatabaseSeeder extends Seeder
 
         // Data Ruang
         Ruang::create([
+            'kode_ruang' => 'RNG-01',
             'nama_ruang' => 'Auditorium',
             'lokasi_ruang' => 'Gedung A',
             'kapasitas' => 20,

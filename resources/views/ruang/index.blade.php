@@ -26,7 +26,7 @@
                 <table id="datatablesSimple">
                     <thead>
                         <tr>
-                            <th>ID</th>
+                            <th>Kode Ruang</th>
                             <th>Nama Ruang</th>
                             <th>Lokasi Ruang</th>
                             <th>Kapasitas</th>
@@ -37,7 +37,7 @@
                     <tbody>
                         @foreach ($data as $d)
                         <tr>
-                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $d->kode_ruang }}</td>
                             <td>{{ $d->nama_ruang }}</td>
                             <td>{{ $d->lokasi_ruang }}</td>
                             <td>{{ $d->kapasitas }}</td>
@@ -49,8 +49,8 @@
                                 @endif
                             </td>
                             <td>
-                                <a href="{{ route('ruang.destroy', $d->id) }}" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
-                                <a href="{{ route('ruang.edit', $d->id) }}" class="btn btn-sm btn-primary"><i class="fas fa-pencil"></i></a>
+                                <a href="{{ route('ruang.destroy', $d->kode_ruang) }}" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
+                                <a href="{{ route('ruang.edit', $d->kode_ruang) }}" class="btn btn-sm btn-primary"><i class="fas fa-pencil"></i></a>
                             </td>
                         </tr>  
                         @endforeach

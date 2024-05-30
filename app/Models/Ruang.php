@@ -8,7 +8,11 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Ruang extends Model
 {
+    protected $primaryKey = 'kode_ruang';
+    protected $keyType = 'string';
+
     protected $fillable = [
+        'kode_ruang',
         'nama_ruang',
         'lokasi_ruang',
         'kapasitas',
