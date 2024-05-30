@@ -30,19 +30,21 @@
                         <table id="datatablesSimple">
                             <thead>
                                 <tr>
-                                    <th>ID Barang</th>
+                                    <th>Kode Barang</th>
                                     <th>Peminjam</th>
                                     <th>Tgl Pinjam</th>
                                     <th>Tgl Kembali</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
+                                @foreach ($barang as $b)
+                                    <tr>
+                                        <td>{{ $b->kode_barang }}</td>
+                                        <td>{{ $b->nama_peminjam }}</td>
+                                        <td>{{ $b->tgl_peminjaman }}</td>
+                                        <td>{{ $b->tgl_pengembalian }}</td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -70,12 +72,14 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
+                                @foreach ($ruang as $r)
+                                    <tr>
+                                        <td>{{ $r->kode_ruang }}</td>
+                                        <td>{{ $r->nama_peminjam }}</td>
+                                        <td>{{ $r->tgl_peminjaman }}</td>
+                                        <td>{{ $r->tgl_pengembalian }}</td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
