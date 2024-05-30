@@ -9,6 +9,7 @@ use App\Models\Ruang;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,6 +18,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+
+        // Administrator
+        User::create([
+            'name' => 'Admin Poltekkes',
+            'email' => 'admin@poltekkes-tanjungpinang.ac.id',
+            'password' => Hash::make('admin123')
+        ]);
+
         // Data Barang
         Barang::create([
             'kode_barang' => 'ITM-01',
