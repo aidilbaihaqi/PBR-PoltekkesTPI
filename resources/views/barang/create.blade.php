@@ -21,6 +21,10 @@
                 <form action="{{ route('barang.store') }}" method="POST" enctype="multipart/form-data">
                   @csrf
                     <div class="form-group mb-2">
+                      <label for="kode_barang">Kode Barang</label>
+                      <input type="text" class="form-control" name="kode_barang" id="kode_barang" required>
+                    </div>
+                    <div class="form-group mb-2">
                       <label for="nama_barang">Nama Barang</label>
                       <input type="text" class="form-control" name="nama_barang" id="nama_barang" required>
                     </div>

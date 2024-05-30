@@ -12,6 +12,7 @@ class Barang extends Model
     protected $keyType = 'string';
     
     protected $fillable = [
+        'kode_barang',
         'nama_barang',
         'deskripsi_barang',
         'status_barang',
