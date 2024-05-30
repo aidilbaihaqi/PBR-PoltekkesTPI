@@ -44,7 +44,7 @@ class PeminjamanBarangController extends Controller
 
     public function edit($id) {
         $barang = Barang::all();
-        $data = PeminjamanBarang::findOrFail($id)->first();
+        $data = PeminjamanBarang::findOrFail($id);
         return view('peminjaman-barang.edit', [
             'title' => 'Ubah Peminjaman Barang',
             'data' => $data,
