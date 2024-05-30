@@ -23,9 +23,9 @@ Route::controller(RuangController::class)->group(function() {
   Route::get('/ruang', 'index')->name('ruang.index');
   Route::get('/ruang/tambah' , 'create')->name('ruang.create');
   Route::post('/ruang/tambah', 'store')->name('ruang.store');
-  Route::get('/ruang/edit/{id}', 'edit')->name('ruang.edit');
-  Route::post('/ruang/edit/{id}', 'update')->name('ruang.update');
-  Route::get('/ruang/hapus/{id}', 'destroy')->name('ruang.destroy');
+  Route::get('/ruang/edit/{kode_ruang}', 'edit')->name('ruang.edit');
+  Route::post('/ruang/edit/{kode_ruang}', 'update')->name('ruang.update');
+  Route::get('/ruang/hapus/{kode_ruang}', 'destroy')->name('ruang.destroy');
 });
 
 // Data Peminjaman Barang

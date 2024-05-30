@@ -18,8 +18,12 @@
                 {{ $title }}
             </div>
             <div class="card-body">
-                <form action="{{ route('ruang.update', $data->id) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('ruang.update', $data->kode_ruang) }}" method="POST" enctype="multipart/form-data">
                   @csrf
+                    <div class="form-group mb-2">
+                      <label for="kode_ruang">Kode Ruang</label>
+                      <input type="text" class="form-control" name="kode_ruang" value="{{ $data->kode_ruang }}" id="kode_ruang" required disabled>
+                    </div>
                     <div class="form-group mb-2">
                       <label for="nama_ruang">Nama Ruang</label>
                       <input type="text" class="form-control" name="nama_ruang" value="{{ $data->nama_ruang }}" id="nama_ruang" required>
