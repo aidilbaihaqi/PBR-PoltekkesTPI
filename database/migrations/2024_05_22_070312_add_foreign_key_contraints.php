@@ -12,18 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('peminjaman_barangs', function(Blueprint $table) {
-            $table->foreign('id_barang')
-            ->references('id')
-            ->on('barangs')
-            ->onDelete('restrict')
-            ->onUpdate('restrict');
+            $table->foreign('kode_barang')
+            ->references('kode_barang')
+            ->on('barangs');
         });
         Schema::table('peminjaman_ruangs', function(Blueprint $table) {
             $table->foreign('id_ruang')
             ->references('id')
-            ->on('ruangs')
-            ->onDelete('restrict')
-            ->onUpdate('restrict');
+            ->on('ruangs');
         });
     }
 
