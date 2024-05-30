@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Barang;
 use App\Models\PeminjamanBarang;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class PeminjamanBarangController extends Controller
 {
@@ -25,14 +26,16 @@ class PeminjamanBarangController extends Controller
     }
 
     public function store(Request $request) {
-        $request->validate([
-            'kode_barang',
-            'nama_peminjam',
-            'tgl_peminjam',
-            'tgl_pengembalian',
-            'status_peminjaman'
+        $validated = Validator::make($request->all(), [
+            'kode_barang' => 'required',
+            'nama_peminjam' => 'required',
+            'tgl_peminjaman' => 'required',
+            'tgl_pengembalian' => 'required'
         ]);
 
+        if($validated->fails()) {
+            echo 'gagal validasi';
+        }
         PeminjamanBarang::create($request->all());
 
         return redirect()->route('peminjaman-barang.index')
@@ -50,12 +53,11 @@ class PeminjamanBarangController extends Controller
     }
 
     public function update(Request $request, $id) {
-        $request->validate([
-            'id_barang',
-            'nama_peminjam',
-            'tgl_peminjam',
-            'tgl_pengembalian',
-            'status_peminjaman'
+        $validated = Validator::make($request->all(), [
+            'kode_barang' => 'required',
+            'nama_peminjam' => 'required',
+            'tgl_peminjaman' => 'required',
+            'tgl_pengembalian' => 'required'
         ]);
 
         $data = PeminjamanBarang::find($id);

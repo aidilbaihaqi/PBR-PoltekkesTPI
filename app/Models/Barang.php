@@ -19,7 +19,7 @@ class Barang extends Model
         'stok'
     ];
 
-    public function peminjamanruang(): BelongsTo {
-        return $this->belongsTo(PeminjamanRuang::class);
+    public function peminjamanbarang(): BelongsTo {
+        return $this->belongsTo(PeminjamanBarang::class);
     }
 }
