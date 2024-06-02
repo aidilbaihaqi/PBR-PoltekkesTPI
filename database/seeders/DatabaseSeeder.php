@@ -48,14 +48,14 @@ class DatabaseSeeder extends Seeder
             'nama_ruang' => 'Auditorium',
             'lokasi_ruang' => 'Gedung A',
             'kapasitas' => 20,
-            'status_ruang' => 1
+            'status_ruang' => 0
         ]);
         Ruang::create([
             'kode_ruang' => 'RNG-02',
             'nama_ruang' => 'Kelas A',
             'lokasi_ruang' => 'Gedung B',
             'kapasitas' => 20,
-            'status_ruang' => 0
+            'status_ruang' => 1
         ]);
 
         // Data Peminjaman Barang
