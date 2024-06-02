@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class PeminjamanBarang extends Model
 {
@@ -17,7 +17,7 @@ class PeminjamanBarang extends Model
         'status_peminjaman'
     ];
 
-    public function barang(): HasOne {
-        return $this->hasOne(Barang::class);
+    public function barang(): BelongsTo {
+        return $this->belongsTo(Barang::class);
     }
 }

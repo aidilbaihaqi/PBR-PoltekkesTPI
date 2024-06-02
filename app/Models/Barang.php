@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Barang extends Model
 {
@@ -19,7 +19,7 @@ class Barang extends Model
         'stok'
     ];
 
-    public function peminjamanbarang(): BelongsTo {
-        return $this->belongsTo(PeminjamanBarang::class);
+    public function peminjamanbarang(): hasMany {
+        return $this->hasMany(PeminjamanBarang::class);
     }
 }

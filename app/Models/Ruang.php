@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Ruang extends Model
 {
@@ -19,7 +19,7 @@ class Ruang extends Model
         'status_ruang'
     ];
 
-    public function peminjamanruang(): BelongsTo {
-        return $this->belongsTo(PeminjamanRuang::class);
+    public function peminjamanruang(): HasMany {
+        return $this->hasMany(PeminjamanRuang::class);
     }
 }
