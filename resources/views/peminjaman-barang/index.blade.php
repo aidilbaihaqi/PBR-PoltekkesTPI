@@ -28,6 +28,7 @@
                         <tr>
                             <th>ID</th>
                             <th>Kode Barang</th>
+                            <th>Jumlah</th>
                             <th>Nama Peminjam</th>
                             <th>Tgl Peminjaman</th>
                             <th>Tgl Pengembalian</th>
@@ -40,6 +41,7 @@
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $d->kode_barang }}</td>
+                            <td>{{ $d->jmlh }}</td>
                             <td>{{ $d->nama_peminjam }}</td>
                             <td>{{ $d->tgl_peminjaman }}</td>
                             <td>{{ $d->tgl_pengembalian }}</td>

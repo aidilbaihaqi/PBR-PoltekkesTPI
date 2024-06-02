@@ -55,6 +55,7 @@ class DatabaseSeeder extends Seeder
         PeminjamanBarang::create([
             'kode_barang' => 'ITM-01',
             'nama_peminjam' => 'Yelisha',
+            'jmlh' => 2,
             'tgl_peminjaman' => '2020-11-21',
             'tgl_pengembalian' => '2020-11-29',
             'status_peminjaman' => 0

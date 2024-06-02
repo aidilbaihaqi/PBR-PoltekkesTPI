@@ -30,6 +30,11 @@
                       </select>
                     </div>
                     <div class="form-group mb-2">
+                      <label for="jmlh">Jumlah Barang</label>
+                      <input type="number" class="form-control" name="jmlh" id="jmlh" required>
+                    </div>
+                    <div>
+                    <div class="form-group mb-2">
                       <label for="nama_peminjam">Nama Peminjam</label>
                       <input type="text" class="form-control" name="nama_peminjam" id="nama_peminjam" required>
                     </div>
