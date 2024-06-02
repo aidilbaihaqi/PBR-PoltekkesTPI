@@ -37,7 +37,28 @@ class PeminjamanRuangController extends Controller
             echo 'gagal validasi';
         }
 
+        $nama_peminjam = $request->nama_peminjam;
+        $kode_ruang = $request->kode_ruang;
+        $cek = PeminjamanRuang::where('nama_peminjam', $nama_peminjam)
+                                ->where('status_peminjaman', 0)
+                                ->first();
+        $cekKesediaan = Ruang::where('kode_ruang', $kode_ruang)
+                            ->where('status_ruang', 0)->first();
+
+        if($cek) {
+            return redirect()->route('peminjaman-ruang.index')
+                        ->with('failed', 'Peminjam belum mengembalikan ruang sebelumnya!');
+        }
+        if($cekKesediaan) {
+            return redirect()->route('peminjaman-ruang.index')
+                        ->with('failed', 'Ruang tidak tersedia!');
+        }
+
         PeminjamanRuang::create($request->all());
+        $createRuang = Ruang::find($request->kode_ruang);
+        $createRuang->update([
+            'status_ruang' => 0
+        ]);
 
         return redirect()->route('peminjaman-ruang.index')
                         ->with('success', 'Peminjaman berhasil ditambahkan!');
@@ -62,6 +83,18 @@ class PeminjamanRuangController extends Controller
         ]);
 
         $data = PeminjamanRuang::find($id);
+
+        if($request->status_peminjaman == 1) {
+            $temp = Ruang::where('kode_ruang', $request->kode_ruang);
+            $temp->update([
+                'status_ruang' => 1
+            ]);
+        }else {
+            $temp = Ruang::where('kode_ruang', $request->kode_ruang);
+            $temp->update([
+                'status_ruang' => 0
+            ]);
+        }
         $data->update($request->all());
 
         return redirect()->route('peminjaman-ruang.index')

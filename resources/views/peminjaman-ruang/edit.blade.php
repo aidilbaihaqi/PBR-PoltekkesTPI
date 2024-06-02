@@ -20,8 +20,9 @@
             <div class="card-body">
                 <form action="{{ route('peminjaman-ruang.update', $data->id) }}" method="POST" enctype="multipart/form-data">
                   @csrf
+                    <input type="hidden" name="kode_ruang" value="{{ $data->kode_ruang }}">
                     <div class="form-group mb-2">
-                      <label for="kode_ruang">Nama Barang</label>
+                      <label for="kode_ruang">Nama Ruang</label>
                       <select class="form-select" name="kode_ruang">
                         <option selected disabled>Kode ruang terpilih : {{ $data->kode_ruang }}</option>
                         @foreach ($ruang as $b)

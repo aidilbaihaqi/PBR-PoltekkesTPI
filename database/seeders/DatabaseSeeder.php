@@ -34,6 +34,13 @@ class DatabaseSeeder extends Seeder
             'status_barang' => 1,
             'stok' => 76
         ]);
+        Barang::create([
+            'kode_barang' => 'ITM-02',
+            'nama_barang' => 'Monitor',
+            'deskripsi_barang' => 'Layar untuk PC',
+            'status_barang' => 1,
+            'stok' => 0
+        ]);
 
         // Data Ruang
         Ruang::create([
@@ -48,7 +55,7 @@ class DatabaseSeeder extends Seeder
             'nama_ruang' => 'Kelas A',
             'lokasi_ruang' => 'Gedung B',
             'kapasitas' => 20,
-            'status_ruang' => 1
+            'status_ruang' => 0
         ]);
 
         // Data Peminjaman Barang

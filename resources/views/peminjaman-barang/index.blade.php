@@ -12,6 +12,11 @@
                 <p>{{ $message }}</p>
             </div>
         @endif
+        @if ($message = Session::get('failed'))
+            <div class="alert alert-danger">
+                <p>{{ $message }}</p>
+            </div>
+        @endif
         <div class="card mb-4">
             <div class="card-body">
                 <h6>Berikut adalah {{ Str::lower($title) }} terupdate. </h6>

@@ -23,7 +23,7 @@
                     <div class="form-group mb-2">
                       <label for="kode_ruang">Nama Ruang</label>
                       <select class="form-select" name="kode_ruang">
-                        <option selected disabled>Pilih barang</option>
+                        <option selected disabled>Pilih ruang</option>
                         @foreach ($data as $d)
                         <option value="{{ $d->kode_ruang }}" >{{ $d->nama_ruang }}</option>
                         @endforeach

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Barang;
 use App\Models\PeminjamanBarang;
+use App\Models\PeminjamanRuang;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -36,6 +37,23 @@ class PeminjamanBarangController extends Controller
 
         if($validated->fails()) {
             echo 'gagal validasi';
+        }
+
+        $nama_peminjam = $request->nama_peminjam;
+        $kode_barang = $request->kode_barang;
+        $cek = PeminjamanBarang::where('nama_peminjam', $nama_peminjam)
+                                ->where('status_peminjaman', 0)
+                                ->first();
+        $cekStok = Barang::where('kode_barang', $kode_barang)
+                        ->where('stok', 0)->first();
+
+        if($cek) {
+            return redirect()->route('peminjaman-barang.index')
+                        ->with('failed', 'Peminjam belum mengembalikan barang sebelumnya!');
+        }
+        if($cekStok) {
+            return redirect()->route('peminjaman-barang.index')
+                        ->with('failed', 'Stok barang tidak ada!');
         }
 
         PeminjamanBarang::create($request->all());
