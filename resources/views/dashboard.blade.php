@@ -65,7 +65,7 @@
                         <table id="datatablesSimple1">
                             <thead>
                                 <tr>
-                                    <th>ID Ruang</th>
+                                    <th>Kode Ruang</th>
                                     <th>Peminjam</th>
                                     <th>Tgl Pinjam</th>
                                     <th>Tgl Kembali</th>
