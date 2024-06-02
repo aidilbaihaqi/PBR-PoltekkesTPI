@@ -7,6 +7,11 @@
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item active"><a href="{{ route('dashboard') }}">Dashboard</a> > {{ $title }}</li>
         </ol>
+        @if ($message = Session::get('success'))
+            <div class="alert alert-success">
+                <p>{{ $message }}</p>
+            </div>
+        @endif
         <div class="card mb-4">
             <div class="card-body">
                 <h6>Berikut adalah {{ Str::lower($title) }} terupdate. </h6>
