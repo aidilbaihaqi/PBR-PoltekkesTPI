@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Schema\Blueprint;   
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('kode_barang');
             $table->string('nama_peminjam');
+            $table->integer('jmlh');
             $table->date('tgl_peminjaman');
             $table->date('tgl_pengembalian');
             $table->boolean('status_peminjaman')->default(0);

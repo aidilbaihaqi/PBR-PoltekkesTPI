@@ -29,6 +29,7 @@ class PeminjamanBarangController extends Controller
         $validated = Validator::make($request->all(), [
             'kode_barang' => 'required',
             'nama_peminjam' => 'required',
+            'jmlh' => 'required',
             'tgl_peminjaman' => 'required',
             'tgl_pengembalian' => 'required'
         ]);
@@ -36,6 +37,7 @@ class PeminjamanBarangController extends Controller
         if($validated->fails()) {
             echo 'gagal validasi';
         }
+
         PeminjamanBarang::create($request->all());
 
         return redirect()->route('peminjaman-barang.index')
