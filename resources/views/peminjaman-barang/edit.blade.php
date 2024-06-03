@@ -20,6 +20,7 @@
             <div class="card-body">
                 <form action="{{ route('peminjaman-barang.update', $data->id) }}" method="POST" enctype="multipart/form-data">
                   @csrf
+                    <input type="hidden" name="kode_barang" value="{{ $data->kode_barang }}">
                     <div class="form-group mb-2">
                       <label for="kode_barang">Nama Barang</label>
                       <select class="form-select" name="kode_barang">

@@ -7,6 +7,7 @@ use App\Models\PeminjamanBarang;
 use App\Models\PeminjamanRuang;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Laravel\Prompts\Table;
 
 class PeminjamanBarangController extends Controller
 {
@@ -75,12 +76,33 @@ class PeminjamanBarangController extends Controller
     public function update(Request $request, $id) {
         $validated = Validator::make($request->all(), [
             'kode_barang' => 'required',
+            'jmlh' => 'required',
             'nama_peminjam' => 'required',
             'tgl_peminjaman' => 'required',
             'tgl_pengembalian' => 'required'
         ]);
 
         $data = PeminjamanBarang::find($id);
+        $cekStok = Barang::where('kode_barang', $data->kode_barang)->where('stok', 0)->first();
+
+        if($cekStok) {
+            return redirect()->route('peminjaman-barang.index')
+                        ->with('failed', 'Stok barang tidak ada!');
+        }
+
+        if($request->status_peminjaman == 1) {
+            $barang = Barang::where('kode_barang', $data->kode_barang)->first();
+            $stok = $barang->stok;
+            
+            $barang->update([
+                'stok' => $stok += $data->jmlh
+            ]);
+            $data->delete();
+
+            return redirect()->route('peminjaman-barang.index')
+            ->with('success', 'Peminjaman berhasil diubah dan data telah dihapus!');
+        }
+
         $data->update($request->all());
 
         return redirect()->route('peminjaman-barang.index')

@@ -38,7 +38,7 @@ class DatabaseSeeder extends Seeder
             'kode_barang' => 'ITM-02',
             'nama_barang' => 'Monitor',
             'deskripsi_barang' => 'Layar untuk PC',
-            'status_barang' => 1,
+            'status_barang' => 0,
             'stok' => 0
         ]);
 
